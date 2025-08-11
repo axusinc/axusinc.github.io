@@ -43,7 +43,3 @@ For more convenience, all users have a default [[Variation]] (they can change it
 - `description` -- Text description of the user (e. g. who is he in a few words), a changeable `nullable` `string`.
 - `location` -- Public location of the user, a changeable `nullable` [[Custom Geolocation]]. Currently not supported and therefore is always set to `NULL`.
 - `createdAt` -- time when the [[Variation]] was created, an unchangeable [[Timestamp]]. Usually default [[Variation]] creates on the first request to get the user's default [[Variation]], so it is **lazy generated**. Other [[Variation]]s are created on demand.
-
-
-
-#TODO Structure

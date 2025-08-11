@@ -2,6 +2,7 @@
 title: Profile
 draft: false
 tags:
+  - axusid
 ---
 [[Profile]] is an entity that holds public information about user that must be the same accross all [[Variation]]s.
 ## Structure

@@ -1,0 +1,1213 @@
+openapi: "3.1.0"
+info:
+  title: "axusid_server API"
+  description: "axusid_server API"
+  version: "1.0.0"
+servers:
+  - url: "http://developed-hybrid.gl.at.ply.gg:26640"
+paths:
+  /areCredentialsExisting:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/AreCredentialsExistingRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Boolean"
+  /changePassword:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangePasswordRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Unit"
+  /changeUsername:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangeUsernameRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Unit"
+  /changeVariationFirstName:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ChangeVariationFirstName"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Unit"
+  /createCredentials:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateCredentialsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_CredentialsDTO"
+  /createTokenSystemWithCredentials:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTokenSystemWithCredentialsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_TokenSystemDTO"
+  /createTokenSystemWithToken:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateTokenSystemWithTokenRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_TokenSystemDTO"
+  /createVariation:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateVariationRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_VariationDTO"
+  /filterPermissions:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterPermissionsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_List<? extends ActivePermissionDTO>"
+  /filterRefreshTokenPermissions:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterRefreshTokenPermissionsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_List<? extends ActivePermissionDTO>"
+  /filterTokenPermissions:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterTokenPermissionsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_List<? extends ActivePermissionDTO>"
+  /getCredentials:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetCredentialsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_CredentialsDTO"
+  /getCredentialsByUsername:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetCredentialsByUsernameRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_CredentialsDTO"
+  /getDefaultVariation:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetDefaultVariationRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_VariationDTO"
+  /getDefaultVariationId:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetDefaultVariationIdRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_String"
+  /getProfile:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetProfileRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_ProfileDTO"
+  /getRefreshToken:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetRefreshTokenRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_RefreshTokenDTO"
+  /getToken:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetTokenRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_TokenDTO"
+  /getTokenByRefreshTokenId:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetTokenByRefreshTokenIdRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_TokenDTO"
+  /getUserInformation:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetUserInformationRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_UserInformationDTO"
+  /getVariation:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetVariationRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_VariationDTO"
+  /grantPermission:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GrantPermissionRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Unit"
+  /hasRefreshTokenActivePermissionRequest:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HasRefreshTokenActivePermissionRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Boolean"
+  /hasTokenActivePermissionRequest:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/HasTokenActivePermission"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Boolean"
+  /isPermissionExisting:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/IsPermissionExistingRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Boolean"
+  /updateToken:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UpdateTokenRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_TokenDTO"
+components:
+  schemas:
+    AreCredentialsExistingRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+    Error:
+      type: "object"
+      properties:
+        exceptionClass:
+          type: "string"
+        stackTrace:
+          type: "string"
+        message:
+          type: "string"
+          nullable: true
+        cause:
+          type: "string"
+          nullable: true
+        localizedMessage:
+          type: "string"
+          nullable: true
+      required:
+        - "exceptionClass"
+        - "stackTrace"
+    RESTAPIResponse:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        error:
+          nullable: true
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+      required:
+        - "success"
+        - "metadata"
+    RESTAPIResponse_Boolean:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "boolean"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    ChangePasswordRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        newPassword:
+          type: "string"
+        tokenId:
+          type: "string"
+      required:
+        - "auid"
+        - "newPassword"
+        - "tokenId"
+    Unit:
+      type: "object"
+      properties: { }
+    RESTAPIResponse_Unit:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/Unit"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    ChangeUsernameRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        newUsername:
+          type: "string"
+        tokenId:
+          type: "string"
+      required:
+        - "auid"
+        - "newUsername"
+        - "tokenId"
+    ChangeVariationFirstName:
+      type: "object"
+      properties:
+        variationId:
+          type: "string"
+        firstName:
+          type: "string"
+          nullable: true
+        tokenId:
+          type: "string"
+      required:
+        - "variationId"
+        - "tokenId"
+    CreateCredentialsRequest:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+        password:
+          type: "string"
+      required:
+        - "username"
+        - "password"
+    CredentialsDTO:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        username:
+          type: "string"
+        passwordHash:
+          type: "string"
+          nullable: true
+        createdAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+        - "username"
+        - "createdAt"
+    RESTAPIResponse_CredentialsDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/CredentialsDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    FullPermissionPatternDTO:
+      type: "object"
+      properties:
+        from:
+          type: "integer"
+          format: "int64"
+        to:
+          type: "integer"
+          format: "int64"
+        context:
+          type: "integer"
+          format: "int64"
+        permissionPattern:
+          type: "string"
+      required:
+        - "from"
+        - "to"
+        - "context"
+        - "permissionPattern"
+    CreateTokenSystemWithCredentialsRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        password:
+          type: "string"
+        permissions:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/FullPermissionPatternDTO"
+      required:
+        - "auid"
+        - "password"
+        - "permissions"
+    TokenSystemDTO:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        refreshTokenId:
+          type: "string"
+        refreshTokenCreatedAt:
+          type: "integer"
+          format: "int64"
+        refreshTokenExpiresAt:
+          type: "integer"
+          format: "int64"
+        tokenId:
+          type: "string"
+        tokenCreatedAt:
+          type: "integer"
+          format: "int64"
+        tokenExpiresAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+        - "refreshTokenId"
+        - "refreshTokenCreatedAt"
+        - "refreshTokenExpiresAt"
+        - "tokenId"
+        - "tokenCreatedAt"
+        - "tokenExpiresAt"
+    RESTAPIResponse_TokenSystemDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/TokenSystemDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    CreateTokenSystemWithTokenRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        permissions:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/FullPermissionPatternDTO"
+        tokenId:
+          type: "string"
+      required:
+        - "auid"
+        - "permissions"
+        - "tokenId"
+    CreateVariationRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        firstName:
+          type: "string"
+          nullable: true
+        lastName:
+          type: "string"
+          nullable: true
+        status:
+          type: "string"
+          nullable: true
+        description:
+          type: "string"
+          nullable: true
+        tokenId:
+          type: "string"
+      required:
+        - "auid"
+        - "tokenId"
+    VariationDTO:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        auid:
+          type: "integer"
+          format: "int64"
+        firstName:
+          type: "string"
+          nullable: true
+        lastName:
+          type: "string"
+          nullable: true
+        status:
+          type: "string"
+          nullable: true
+        description:
+          type: "string"
+          nullable: true
+        createdAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "id"
+        - "auid"
+        - "createdAt"
+    RESTAPIResponse_VariationDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/VariationDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    Timestamp:
+      type: "object"
+      properties:
+        value:
+          type: "integer"
+          format: "int64"
+      required:
+        - "value"
+    Period:
+      type: "object"
+      properties:
+        from:
+          $ref: "#/components/schemas/Timestamp"
+        to:
+          $ref: "#/components/schemas/Timestamp"
+      required:
+        - "from"
+        - "to"
+    Sort:
+      type: "object"
+      properties:
+        by:
+          type: "string"
+        order:
+          type: "string"
+          enum:
+            - "ASC"
+            - "DESC"
+      required:
+        - "by"
+        - "order"
+    Pagination:
+      type: "object"
+      properties:
+        page:
+          type: "integer"
+          format: "int32"
+        itemsPerPage:
+          type: "integer"
+          format: "int32"
+        search:
+          type: "string"
+          nullable: true
+        period:
+          nullable: true
+          $ref: "#/components/schemas/Period"
+        sort:
+          nullable: true
+          $ref: "#/components/schemas/Sort"
+      required:
+        - "page"
+        - "itemsPerPage"
+    FilterPermissionsRequest:
+      type: "object"
+      properties:
+        from:
+          type: "integer"
+          format: "int64"
+        to:
+          type: "integer"
+          format: "int64"
+        context:
+          type: "integer"
+          format: "int64"
+        permission:
+          type: "string"
+          nullable: true
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+        tokenId:
+          type: "string"
+      required:
+        - "from"
+        - "to"
+        - "context"
+        - "pagination"
+        - "tokenId"
+    ActivePermissionDTO:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        from:
+          type: "integer"
+          format: "int64"
+        to:
+          type: "integer"
+          format: "int64"
+        context:
+          type: "integer"
+          format: "int64"
+        permissionPattern:
+          type: "string"
+        createdAt:
+          type: "integer"
+          format: "int64"
+        expiresAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "id"
+        - "from"
+        - "to"
+        - "context"
+        - "permissionPattern"
+        - "createdAt"
+        - "expiresAt"
+    RESTAPIResponse_List<? extends ActivePermissionDTO>:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/ActivePermissionDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    FilterRefreshTokenPermissionsRequest:
+      type: "object"
+      properties:
+        refreshTokenId:
+          type: "string"
+        from:
+          type: "integer"
+          format: "int64"
+        to:
+          type: "integer"
+          format: "int64"
+        context:
+          type: "integer"
+          format: "int64"
+        permission:
+          type: "string"
+          nullable: true
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+      required:
+        - "refreshTokenId"
+        - "from"
+        - "to"
+        - "context"
+        - "pagination"
+    FilterTokenPermissionsRequest:
+      type: "object"
+      properties:
+        tokenId:
+          type: "string"
+        from:
+          type: "integer"
+          format: "int64"
+        to:
+          type: "integer"
+          format: "int64"
+        context:
+          type: "integer"
+          format: "int64"
+        permission:
+          type: "string"
+          nullable: true
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+      required:
+        - "tokenId"
+        - "from"
+        - "to"
+        - "context"
+        - "pagination"
+    GetCredentialsRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+    GetCredentialsByUsernameRequest:
+      type: "object"
+      properties:
+        username:
+          type: "string"
+      required:
+        - "username"
+    GetDefaultVariationRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+    GetDefaultVariationIdRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+    RESTAPIResponse_String:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "string"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    GetProfileRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+    ProfileDTO:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        avatar:
+          type: "string"
+          nullable: true
+        verifiedUsername:
+          type: "string"
+          nullable: true
+        parents:
+          type: "array"
+          items:
+            type: "integer"
+            format: "int64"
+        createdAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+        - "parents"
+        - "createdAt"
+    RESTAPIResponse_ProfileDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/ProfileDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    GetRefreshTokenRequest:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+      required:
+        - "id"
+    RefreshTokenDTO:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        auid:
+          type: "integer"
+          format: "int64"
+        createdAt:
+          type: "integer"
+          format: "int64"
+        expiresAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "id"
+        - "auid"
+        - "createdAt"
+        - "expiresAt"
+    RESTAPIResponse_RefreshTokenDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/RefreshTokenDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    GetTokenRequest:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+      required:
+        - "id"
+    TokenDTO:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        refreshTokenId:
+          type: "string"
+          nullable: true
+        createdAt:
+          type: "integer"
+          format: "int64"
+        expiresAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "id"
+        - "createdAt"
+        - "expiresAt"
+    RESTAPIResponse_TokenDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/TokenDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    GetTokenByRefreshTokenIdRequest:
+      type: "object"
+      properties:
+        refreshTokenId:
+          type: "string"
+      required:
+        - "refreshTokenId"
+    GetUserInformationRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        variationId:
+          type: "string"
+          nullable: true
+        tokenId:
+          type: "string"
+          nullable: true
+      required:
+        - "auid"
+    UserInformationDTO:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        username:
+          type: "string"
+        passwordHash:
+          type: "string"
+          nullable: true
+        credentialsCreatedAt:
+          type: "integer"
+          format: "int64"
+        avatar:
+          type: "string"
+          nullable: true
+        verifiedUsername:
+          type: "string"
+          nullable: true
+        parents:
+          type: "array"
+          items:
+            type: "integer"
+            format: "int64"
+        profileCreatedAt:
+          type: "integer"
+          format: "int64"
+        variationId:
+          type: "string"
+        firstName:
+          type: "string"
+          nullable: true
+        lastName:
+          type: "string"
+          nullable: true
+        status:
+          type: "string"
+          nullable: true
+        description:
+          type: "string"
+          nullable: true
+        variationCreatedAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "auid"
+        - "username"
+        - "credentialsCreatedAt"
+        - "parents"
+        - "profileCreatedAt"
+        - "variationId"
+        - "variationCreatedAt"
+    RESTAPIResponse_UserInformationDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/UserInformationDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    GetVariationRequest:
+      type: "object"
+      properties:
+        variationId:
+          type: "string"
+        tokenId:
+          type: "string"
+          nullable: true
+      required:
+        - "variationId"
+    GrantPermissionRequest:
+      type: "object"
+      properties:
+        fullPermissionPattern:
+          $ref: "#/components/schemas/FullPermissionPatternDTO"
+        tokenId:
+          type: "string"
+      required:
+        - "fullPermissionPattern"
+        - "tokenId"
+    FullPermissionDTO:
+      type: "object"
+      properties:
+        from:
+          type: "integer"
+          format: "int64"
+        to:
+          type: "integer"
+          format: "int64"
+        context:
+          type: "integer"
+          format: "int64"
+        permission:
+          type: "string"
+      required:
+        - "from"
+        - "to"
+        - "context"
+        - "permission"
+    HasRefreshTokenActivePermissionRequest:
+      type: "object"
+      properties:
+        refreshTokenId:
+          type: "string"
+        fullPermission:
+          $ref: "#/components/schemas/FullPermissionDTO"
+      required:
+        - "refreshTokenId"
+        - "fullPermission"
+    HasTokenActivePermission:
+      type: "object"
+      properties:
+        tokenId:
+          type: "string"
+        fullPermission:
+          $ref: "#/components/schemas/FullPermissionDTO"
+      required:
+        - "tokenId"
+        - "fullPermission"
+    IsPermissionExistingRequest:
+      type: "object"
+      properties:
+        permission:
+          $ref: "#/components/schemas/FullPermissionDTO"
+        tokenId:
+          type: "string"
+      required:
+        - "permission"
+        - "tokenId"
+    UpdateTokenRequest:
+      type: "object"
+      properties:
+        refreshTokenId:
+          type: "string"
+      required:
+        - "refreshTokenId"

@@ -89,4 +89,5 @@ Here:
 > Currently you can't specify custom [[Token]]s/[[Refresh token]]s lifetime.
 
 ## What's next?
+Go to [[AXUS™ ID Key Terms]] to learn more about [[AXUS™ ID]] system.
 Go to [[AXUS™ ID REST API]] to get more information about dealing with [[AXUS™ ID]] via **REST API**.
