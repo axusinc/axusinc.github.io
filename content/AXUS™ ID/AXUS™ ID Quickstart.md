@@ -78,7 +78,7 @@ Here:
 > expires_in=43200&
 > auid=1&
 > refresh_token=keUqX5pTpf_2Ri08s6PUdVnqY_uzPR_U0o9QG00k-1g2bfjvu0hH9vcHGz1CE_0NEDP4T-B94s3bFiWDd8QsXA0zpB8xD3elXR9SjWedchj02L5EEomN51n1ZwrT2LHc&
-> refreshExpiresIn=14515200&
+> refresh_token_expires_in=14515200&
 > state=AWdhakBWdhkBAsjdW
 > ```
 
