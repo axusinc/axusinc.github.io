@@ -1,10 +1,10 @@
 ---
-title: AXUS™, Inc. Wiki Home
+title: AXUS™ Wiki Home
 draft: false
 tags:
 ---
 ## Welcome!
-Here all the wikis about [[AXUS™]] products are collected.
+Here all the neccessary information about [[AXUS™]] is collected (or will be available here in the future).
 
 | Product              | Description                               | Wiki             | Development |
 | -------------------- | ----------------------------------------- | ---------------- | ----------- |
@@ -16,6 +16,12 @@ Here all the wikis about [[AXUS™]] products are collected.
 * `@likespro_eth` on **X**.
 * likespro.eth@gmail.com — **email**.
 * `@likespro_eth` on **Telegram**.
+## Latest News
+###### `2025/08/12` `20:59` **[[AXUS™ ID]]** [[Exceptions were improved]]
+###### `2025/08/12` `19:28` **[[AXUS™ ID]]** [[ANYONE AUID is replaced by NULL]]
+
+---
 
 AXUS, AXUS ID, MasterPay, MasterMiner, likespro, AXUS logo & likespro logo are unregistered trademarks and the property of likespro (Andrii Mykhalko).
 
+All rights reserved (c) Andrii Mykhalko

@@ -8,7 +8,7 @@ One of ways to interact with the [[AXUS™ ID]] system is traditional **REST API
 ## OpenAPI
 Download our [OpenAPI Specification](https://en.wikipedia.org/wiki/OpenAPI_Specification) here: [[AXUS™ ID OpenAPI Specification.yaml]].
 
-You can view it easily, for example, in [Swagger Editor Next](https://editor-next.swagger.io/) by importing the specification via the **URL** below or the `.yaml` file attached above.
+You can view it easily, for example, in [Swagger Editor Next](https://editor-next.swagger.io/) by importing the specification via the **URL** below, the `.yaml` file attached above or just by copy-pasting content of the specification into [Swagger Editor Next](https://editor-next.swagger.io/).
 
 Direct link to [OpenAPI Documentation](https://en.wikipedia.org/wiki/OpenAPI_Specification): `https://axusinc.github.io/AXUS%E2%84%A2-ID/AXUS%E2%84%A2-ID-OpenAPI-Specification.yaml`
 

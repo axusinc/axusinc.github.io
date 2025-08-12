@@ -324,8 +324,7 @@ paths:
           description: "OK"
           content:
             '*/*':
-              schema:
-                $ref: "#/components/schemas/RESTAPIResponse_UserInformationDTO"
+              schema: { }
   /getVariation:
     post:
       description: ""
@@ -780,12 +779,15 @@ components:
         from:
           type: "integer"
           format: "int64"
+          nullable: true
         to:
           type: "integer"
           format: "int64"
+          nullable: true
         context:
           type: "integer"
           format: "int64"
+          nullable: true
         permission:
           type: "string"
           nullable: true
@@ -794,9 +796,6 @@ components:
         tokenId:
           type: "string"
       required:
-        - "from"
-        - "to"
-        - "context"
         - "pagination"
         - "tokenId"
     ActivePermissionDTO:
@@ -850,12 +849,15 @@ components:
         from:
           type: "integer"
           format: "int64"
+          nullable: true
         to:
           type: "integer"
           format: "int64"
+          nullable: true
         context:
           type: "integer"
           format: "int64"
+          nullable: true
         permission:
           type: "string"
           nullable: true
@@ -863,9 +865,6 @@ components:
           $ref: "#/components/schemas/Pagination"
       required:
         - "refreshTokenId"
-        - "from"
-        - "to"
-        - "context"
         - "pagination"
     FilterTokenPermissionsRequest:
       type: "object"
@@ -875,12 +874,15 @@ components:
         from:
           type: "integer"
           format: "int64"
+          nullable: true
         to:
           type: "integer"
           format: "int64"
+          nullable: true
         context:
           type: "integer"
           format: "int64"
+          nullable: true
         permission:
           type: "string"
           nullable: true
@@ -888,9 +890,6 @@ components:
           $ref: "#/components/schemas/Pagination"
       required:
         - "tokenId"
-        - "from"
-        - "to"
-        - "context"
         - "pagination"
     GetCredentialsRequest:
       type: "object"
@@ -949,6 +948,9 @@ components:
           type: "integer"
           format: "int64"
         avatar:
+          type: "string"
+          nullable: true
+        icon:
           type: "string"
           nullable: true
         verifiedUsername:
@@ -1088,19 +1090,20 @@ components:
         avatar:
           type: "string"
           nullable: true
+        icon:
+          type: "string"
+          nullable: true
         verifiedUsername:
           type: "string"
           nullable: true
-        parents:
-          type: "array"
-          items:
-            type: "integer"
-            format: "int64"
         profileCreatedAt:
           type: "integer"
           format: "int64"
         variationId:
           type: "string"
+        variationIcon:
+          type: "string"
+          nullable: true
         firstName:
           type: "string"
           nullable: true
@@ -1120,7 +1123,6 @@ components:
         - "auid"
         - "username"
         - "credentialsCreatedAt"
-        - "parents"
         - "profileCreatedAt"
         - "variationId"
         - "variationCreatedAt"
@@ -1161,17 +1163,17 @@ components:
         from:
           type: "integer"
           format: "int64"
+          nullable: true
         to:
           type: "integer"
           format: "int64"
+          nullable: true
         context:
           type: "integer"
           format: "int64"
         permission:
           type: "string"
       required:
-        - "from"
-        - "to"
         - "context"
         - "permission"
     HasRefreshTokenActivePermissionRequest:
