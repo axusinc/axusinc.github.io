@@ -31,7 +31,7 @@ Here:
 * `<APP_AUID>` — **[[AUID]]** of your application account in [[AXUS™ ID]]. For example, [[MasterPay™]] has [[AXUS™ ID]] account with [[AUID]] = `6`. So if you are developing [[MasterPay™]] and now authorize it's user via [[AXUS™ ID]], you must use `6` as `<APP_AUID>`.
 * `<REDIRECT_URI>` — URI that [[AXUS™ ID]] will redirect to after authorization process finished (successfully or with errors). For example, if your callback worker listens to [https://example.com/callback](https://example.com/callback) — you should specify `https://example.com/callback` as the `REDIRECT_URI`. [[AXUS™ ID]] will add all the info to the end of the URI as fragment (URI part after `#` symbol).
 * `<FULL_PERMISSION_PATTERN>` — [[Full Permission Pattern]] which the token you are creating will have. You can specify multiple [[Full Permission Pattern]]s by separating them with `+` symbol. You can specify `-1` in `from` and `to` fields and [[AXUS™ ID]] will automatically replace them with the user's [[AUID]].
-  You can also just leave the `scope` field empty (e. g. if you don't need token to have any scope **or** you don't use [[AXUS™ ID]] permission system in your app).
+  You can also just leave the `scope` field empty (**e.g.,** if you don't need token to have any scope **or** you don't use [[AXUS™ ID]] permission system in your app).
 * `<RANDOM_STRING>` — just a random string. It doesn't matter in **OAuth2 Implicit Flow**.
 
 > [!example] Example of a request

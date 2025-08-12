@@ -19,7 +19,6 @@ tags:
 ## Common Credentials
 | [[AUID]] | [[Username]] | Description                                                                                                                                      |
 | -------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `-1`     |              | Not a [[Credentials]] but just a special, utility [[AUID]]. No accounts have this [[AUID]], but it is used in filters and means [[Anyone AUID]]. |
 | `0`      | `@everyone`  | A special user. See [everyone-user](everyone-user "mention") for more information.                                                               |
 | `1`      | `@likespro`  | **likespro** in person. Creator of the [[AXUS™]] system.                                                                                         |
 | `2`      | `@axusid`    | [[AXUS™ ID]] account. All permissions regarding [[AXUS™ ID]] should be specified in the context of this account.                                 |

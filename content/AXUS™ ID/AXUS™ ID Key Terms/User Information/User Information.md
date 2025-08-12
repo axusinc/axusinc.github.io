@@ -11,7 +11,7 @@ tags:
 - `profile` -- [[Profile]] of the user, an unchangeable [[Profile]] data structure.
 - `variation` -- Some [[Variation]] of the user (default [[Variation]] by default), an unchangeable [[Variation]] data structure.
 #### In [[AXUS™ ID REST API]]
-To make use of [[User Information]] data structure in [[AXUS™ ID REST API]] easier, the structure was simplified (all fields from complex substructures (e. g. [[Credentials]]) were merged):
+To make use of [[User Information]] data structure in [[AXUS™ ID REST API]] easier, the structure was simplified (all fields from complex substructures (**e.g.,** [[Credentials]]) were merged):
 - `auid` -- [[AUID]] of the user, an unchangeable `64-bit` `integer`.
 - `username` -- [[Username]] of the user, a changeable `string`.
 - `passwordHash` -- hash of the user's [[Password]], a changeable `string`. Is always set to `NULL` in responses due to security reasons.
@@ -24,7 +24,7 @@ To make use of [[User Information]] data structure in [[AXUS™ ID REST API]] ea
 - `variationIcon` -- **Icon** (it's [[Image.Id]] in [[HyperCDN™]]) of the [[Variation]], a changeable `nullable` `string`. Currently not supported and therefore is always set to `NULL`. **Icon** is the [[Variation]]'s symbol on transparent background and is used next to [[Variation]] name in **UI**.
 - `firstName` -- [[First Name]] of the user in this [[Variation]], a changeable `nullable` `string`.
 - `lastName` -- [[Last Name]] of the user in this [[Variation]], a changeable `nullable` `string`.
-- `status` -- Short text status of the user (e. g. what is he doing now), a changeable `nullable` `string`.
-- `description` -- Text description of the user (e. g. who is he in a few words), a changeable `nullable` `string`.
+- `status` -- Short text status of the user (**e.g.,** what is he doing now), a changeable `nullable` `string`.
+- `description` -- Text description of the user (**e.g.,** who is he in a few words), a changeable `nullable` `string`.
 - `location` -- Public location of the user, a changeable `nullable` [[Custom Geolocation]]. Currently not supported and therefore is always set to `NULL`.
 - `variationCreatedAt` -- time when the [[Variation]] was created, an unchangeable [[Timestamp]]. Usually default [[Variation]] creates on the first request to get the user's default [[Variation]], so it is **lazy generated**. Other [[Variation]]s are created on demand.
