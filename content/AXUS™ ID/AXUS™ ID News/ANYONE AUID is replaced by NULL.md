@@ -6,5 +6,5 @@ tags:
 ---
 Until now, there was a special **ANYONE** [[AUID]] to use in filters. But today it was removed, and you should now use `NULL` instead of old **ANYONE** [[AUID]].
 
-> [!warning]
+> [!info]
 > As a result of these changes, allowed and valid [[AUID]]s now start from `0`.

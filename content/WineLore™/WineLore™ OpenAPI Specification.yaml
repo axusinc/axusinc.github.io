@@ -1,0 +1,152 @@
+openapi: "3.1.0"
+info:
+  title: "winelore API"
+  description: "winelore API"
+  version: "1.0.0"
+servers:
+  - url: "http://months-demonstration.gl.at.ply.gg:26709"
+paths:
+  /filterCompetitions:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterCompetitionsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_List<? extends CompetitionDTO>"
+components:
+  schemas:
+    Timestamp:
+      type: "object"
+      properties:
+        value:
+          type: "integer"
+          format: "int64"
+      required:
+        - "value"
+    Period:
+      type: "object"
+      properties:
+        from:
+          $ref: "#/components/schemas/Timestamp"
+        to:
+          $ref: "#/components/schemas/Timestamp"
+      required:
+        - "from"
+        - "to"
+    Sort:
+      type: "object"
+      properties:
+        by:
+          type: "string"
+        order:
+          type: "string"
+          enum:
+            - "ASC"
+            - "DESC"
+      required:
+        - "by"
+        - "order"
+    Pagination:
+      type: "object"
+      properties:
+        page:
+          type: "integer"
+          format: "int32"
+        itemsPerPage:
+          type: "integer"
+          format: "int32"
+        search:
+          type: "string"
+          nullable: true
+        period:
+          nullable: true
+          $ref: "#/components/schemas/Period"
+        sort:
+          nullable: true
+          $ref: "#/components/schemas/Sort"
+      required:
+        - "page"
+        - "itemsPerPage"
+    FilterCompetitionsRequest:
+      type: "object"
+      properties:
+        organizer:
+          type: "integer"
+          format: "int64"
+          nullable: true
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+      required:
+        - "pagination"
+    CompetitionDTO:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        organizer:
+          type: "integer"
+          format: "int64"
+        name:
+          type: "string"
+        plannedStartAt:
+          type: "integer"
+          format: "int64"
+      required:
+        - "id"
+        - "organizer"
+        - "name"
+        - "plannedStartAt"
+    Error:
+      type: "object"
+      properties:
+        exceptionClass:
+          type: "string"
+        stackTrace:
+          type: "string"
+        message:
+          type: "string"
+          nullable: true
+        cause:
+          type: "string"
+          nullable: true
+        localizedMessage:
+          type: "string"
+          nullable: true
+      required:
+        - "exceptionClass"
+        - "stackTrace"
+    RESTAPIResponse:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        error:
+          nullable: true
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+      required:
+        - "success"
+        - "metadata"
+    RESTAPIResponse_List<? extends CompetitionDTO>:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/CompetitionDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"

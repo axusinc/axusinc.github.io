@@ -1,5 +1,5 @@
 ---
-title: AXUS™ Wiki Home
+title: AXUS™ Information Portal
 draft: false
 tags:
 ---

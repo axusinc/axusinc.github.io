@@ -56,7 +56,7 @@ token_type=bearer&
 expires_in=<TOKEN_LIFETIME>&
 auid=<USER_AUID>&
 refresh_token=<REFRESH_TOKEN>&
-refreshExpiresIn=<REFRESH_TOKEN_LIFETIME>&
+refresh_token_expires_in=<REFRESH_TOKEN_LIFETIME>&
 state=<STATE_FIELD_FROM_REQUEST>
 ```
 

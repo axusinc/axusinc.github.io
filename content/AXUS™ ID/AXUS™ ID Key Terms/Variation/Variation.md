@@ -34,7 +34,7 @@ With [[Variation]]s you can have separate avatars, names, statuses, content in s
 
 For more convenience, all users have a default [[Variation]] (they can change it any time)
 ## Structure
-- `id` -- [UUIDv4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
+- `id` -- **Id** of the [[Variation]], an unchangeable [UUIDv4](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 - `auid` -- [[AUID]] of the user, an unchangeable `64-bit` `integer`.
 - `icon` -- **Icon** (it's [[Image.Id]] in [[HyperCDN™]]) of the [[Variation]], a changeable `nullable` `string`. Currently not supported and therefore is always set to `NULL`. **Icon** is the [[Variation]]'s symbol on transparent background and is used next to [[Variation]] name in **UI**.
 - `firstName` -- [[First Name]] of the user in this [[Variation]], a changeable `nullable` `string`.

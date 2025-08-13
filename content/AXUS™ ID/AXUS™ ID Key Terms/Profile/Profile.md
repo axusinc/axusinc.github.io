@@ -4,7 +4,7 @@ draft: false
 tags:
   - axusid
 ---
-[[Profile]] is an entity that holds public information about user that must be the same accross all [[Variation]]s.
+[[Profile]] is an **Entity** that holds public information about user that must be the same accross all [[Variation]]s.
 ## Structure
 - `auid` -- [[AUID]] of the user, an unchangeable `64-bit` `integer`.
 - `avatar` -- **Avatar** (it's [[Image.Id]] in [[HyperCDN™]]) of the user, a changeable `nullable` `string`. Currently not supported and therefore is always set to `NULL`.
