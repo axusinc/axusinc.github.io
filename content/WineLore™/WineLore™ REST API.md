@@ -4,7 +4,11 @@ draft: false
 tags:
   - winelore
 ---
-One of ways to interact with the [[WineLore™]] system is traditional **REST API**. See [[#OpenAPI]] section to get **REST API** specification with all supported  methods and information about them.
+>[!summary]
+>- [[WineLore™ REST API]] **Endpoint** is `http://months-demonstration.gl.at.ply.gg:26709`
+>- Download [OpenAPI Specification](https://en.wikipedia.org/wiki/OpenAPI_Specification) here: [[WineLore™ OpenAPI Specification.yaml]]
+
+One of ways to interact with the [[WineLore™]] system is traditional **REST API**. The [[WineLore™ REST API]] **Endpoint** address is `http://months-demonstration.gl.at.ply.gg:26709`. See [[#OpenAPI]] section to get **REST API** specification with all supported  methods and information about them.
 ## OpenAPI
 Download our [OpenAPI Specification](https://en.wikipedia.org/wiki/OpenAPI_Specification) here: [[WineLore™ OpenAPI Specification.yaml]].
 

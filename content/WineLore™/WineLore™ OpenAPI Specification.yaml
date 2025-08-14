@@ -6,6 +6,22 @@ info:
 servers:
   - url: "http://months-demonstration.gl.at.ply.gg:26709"
 paths:
+  /createWine:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateWineRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Unit"
   /filterCompetitions:
     post:
       description: ""
@@ -24,6 +40,84 @@ paths:
                 $ref: "#/components/schemas/RESTAPIResponse_List<? extends CompetitionDTO>"
 components:
   schemas:
+    CreateWineRequest:
+      type: "object"
+      properties:
+        producer:
+          type: "integer"
+          format: "int64"
+        name:
+          type: "string"
+        iteration:
+          type: "integer"
+          format: "int64"
+        color:
+          type: "string"
+          enum:
+            - "RED"
+            - "WHITE"
+            - "ROSE"
+        type:
+          type: "string"
+          enum:
+            - "STILL"
+            - "SPARKLING"
+            - "SPIRITOUS"
+        tokenId:
+          type: "string"
+      required:
+        - "producer"
+        - "name"
+        - "iteration"
+        - "color"
+        - "type"
+        - "tokenId"
+    Unit:
+      type: "object"
+      properties: { }
+    Error:
+      type: "object"
+      properties:
+        exceptionClass:
+          type: "string"
+        stackTrace:
+          type: "string"
+        message:
+          type: "string"
+          nullable: true
+        cause:
+          type: "string"
+          nullable: true
+        localizedMessage:
+          type: "string"
+          nullable: true
+      required:
+        - "exceptionClass"
+        - "stackTrace"
+    RESTAPIResponse:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        error:
+          nullable: true
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+      required:
+        - "success"
+        - "metadata"
+    RESTAPIResponse_Unit:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/Unit"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
     Timestamp:
       type: "object"
       properties:
@@ -105,38 +199,6 @@ components:
         - "organizer"
         - "name"
         - "plannedStartAt"
-    Error:
-      type: "object"
-      properties:
-        exceptionClass:
-          type: "string"
-        stackTrace:
-          type: "string"
-        message:
-          type: "string"
-          nullable: true
-        cause:
-          type: "string"
-          nullable: true
-        localizedMessage:
-          type: "string"
-          nullable: true
-      required:
-        - "exceptionClass"
-        - "stackTrace"
-    RESTAPIResponse:
-      type: "object"
-      properties:
-        success:
-          type: "boolean"
-        error:
-          nullable: true
-          $ref: "#/components/schemas/Error"
-        metadata:
-          type: "string"
-      required:
-        - "success"
-        - "metadata"
     RESTAPIResponse_List<? extends CompetitionDTO>:
       type: "object"
       properties:

@@ -4,7 +4,11 @@ draft: false
 tags:
   - axusid
 ---
-One of ways to interact with the [[AXUS™ ID]] system is traditional **REST API**. See [[#OpenAPI]] section to get **REST API** specification with all supported  methods and information about them.
+>[!summary]
+>- [[AXUS™ ID REST API]] **Endpoint** is `http://developed-hybrid.gl.at.ply.gg:26640`
+>- Download [OpenAPI Specification](https://en.wikipedia.org/wiki/OpenAPI_Specification) here: [[AXUS™ ID OpenAPI Specification.yaml]]
+
+One of ways to interact with the [[AXUS™ ID]] system is traditional **REST API**. The [[AXUS™ ID REST API]] **Endpoint** address is `http://developed-hybrid.gl.at.ply.gg:26640`. See [[#OpenAPI]] section to get **REST API** specification with all supported  methods and information about them.
 ## OpenAPI
 Download our [OpenAPI Specification](https://en.wikipedia.org/wiki/OpenAPI_Specification) here: [[AXUS™ ID OpenAPI Specification.yaml]].
 

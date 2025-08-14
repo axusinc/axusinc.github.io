@@ -5,6 +5,7 @@ tags:
 ---
 ## Welcome!
 Here all the neccessary information about [[AXUS™]] is collected (or will be available here in the future).
+#### Products
 
 | Product              | Description                               | Wiki             | Development |
 | -------------------- | ----------------------------------------- | ---------------- | ----------- |
@@ -12,6 +13,8 @@ Here all the neccessary information about [[AXUS™]] is collected (or will be a
 | **[[MasterPay™]]**   | Cryptowallet with NFC support             | 🔴 Not Available | 🟢 Active   |
 | **[[MasterMiner™]]** | Android CPU Cryptominer based on XMRig    | ⚫ Not Planned    | 🔵 Paused   |
 | **[[WineLore™]]**    | Electronic Wine Judging System            | 🟠 Temporary     | 🟢 Active   |
+#### Global Guidelines
+- [[AXUS™ Default Exception System]]
 ## Our Contacts
 * `@likespro_eth` on **X**.
 * likespro.eth@gmail.com — **email**.
