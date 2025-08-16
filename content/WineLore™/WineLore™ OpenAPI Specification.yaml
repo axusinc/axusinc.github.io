@@ -38,6 +38,22 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/RESTAPIResponse_List<? extends CompetitionDTO>"
+  /getCommissionParticipantByCommissionIdAndAUID:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetCommissionParticipantByCommissionIdAndAUIDRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_CompetitionParticipantDTO"
 components:
   schemas:
     CreateWineRequest:
@@ -208,6 +224,48 @@ components:
           type: "array"
           items:
             $ref: "#/components/schemas/CompetitionDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    GetCommissionParticipantByCommissionIdAndAUIDRequest:
+      type: "object"
+      properties:
+        commissionId:
+          type: "string"
+        auid:
+          type: "integer"
+          format: "int64"
+      required:
+        - "commissionId"
+        - "auid"
+    CompetitionParticipantDTO:
+      type: "object"
+      properties:
+        id:
+          type: "string"
+        commissionId:
+          type: "string"
+        auid:
+          type: "integer"
+          format: "int64"
+        role:
+          type: "string"
+          enum:
+            - "HEAD_OF_EXPERTS"
+            - "EXPERT"
+      required:
+        - "id"
+        - "commissionId"
+        - "auid"
+        - "role"
+    RESTAPIResponse_CompetitionParticipantDTO:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          $ref: "#/components/schemas/CompetitionParticipantDTO"
         error:
           $ref: "#/components/schemas/Error"
         metadata:
