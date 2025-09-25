@@ -86,6 +86,22 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/RESTAPIResponse_List<? extends CommissionParticipantDTO>"
+  /filterCommissions:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterCommissionsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_List<? extends CommissionDTO>"
   /filterCompetitions:
     post:
       description: ""
@@ -102,6 +118,22 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/RESTAPIResponse_List<? extends CompetitionDTO>"
+  /filterWineSampleAssessments:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterWineSampleAssessmentsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_List<? extends WineSampleAssessmentDTO>"
   /getCommissionParticipantByCommissionIdAndAUID:
     post:
       description: ""
@@ -150,6 +182,22 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/RESTAPIResponse_WineSampleDTO"
+  /nextWineSample:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/NextWineSampleRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_String"
   /startCommission:
     post:
       description: ""
@@ -344,7 +392,7 @@ components:
           $ref: "#/components/schemas/Error"
         metadata:
           type: "string"
-    JSONObject:
+    JsonObject:
       type: "object"
       properties: { }
     CreateWineSampleAssessmentRequest:
@@ -361,7 +409,7 @@ components:
           type: "integer"
           format: "int32"
         metadata:
-          $ref: "#/components/schemas/JSONObject"
+          $ref: "#/components/schemas/JsonObject"
         tokenId:
           type: "string"
       required:
@@ -387,7 +435,7 @@ components:
           type: "integer"
           format: "int32"
         metadata:
-          $ref: "#/components/schemas/JSONObject"
+          $ref: "#/components/schemas/JsonObject"
         createdAt:
           type: "integer"
           format: "int64"
@@ -515,6 +563,35 @@ components:
           $ref: "#/components/schemas/Error"
         metadata:
           type: "string"
+    FilterCommissionsRequest:
+      type: "object"
+      properties:
+        competitionId:
+          type: "string"
+          nullable: true
+        name:
+          type: "string"
+          nullable: true
+        isApproved:
+          type: "boolean"
+          nullable: true
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+      required:
+        - "pagination"
+    RESTAPIResponse_List<? extends CommissionDTO>:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/CommissionDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
     FilterCompetitionsRequest:
       type: "object"
       properties:
@@ -535,6 +612,40 @@ components:
           type: "array"
           items:
             $ref: "#/components/schemas/CompetitionDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    FilterWineSampleAssessmentsRequest:
+      type: "object"
+      properties:
+        commissionId:
+          type: "string"
+          nullable: true
+        from:
+          type: "integer"
+          format: "int64"
+          nullable: true
+        wineSampleId:
+          type: "string"
+          nullable: true
+        mark:
+          type: "integer"
+          format: "int32"
+          nullable: true
+        pagination:
+          $ref: "#/components/schemas/Pagination"
+      required:
+        - "pagination"
+    RESTAPIResponse_List<? extends WineSampleAssessmentDTO>:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "array"
+          items:
+            $ref: "#/components/schemas/WineSampleAssessmentDTO"
         error:
           $ref: "#/components/schemas/Error"
         metadata:
@@ -658,6 +769,34 @@ components:
           type: "boolean"
         data:
           $ref: "#/components/schemas/WineSampleDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    NextWineSampleRequest:
+      type: "object"
+      properties:
+        auid:
+          type: "integer"
+          format: "int64"
+        commissionId:
+          type: "string"
+        currentWineSampleId:
+          type: "string"
+        tokenId:
+          type: "string"
+      required:
+        - "auid"
+        - "commissionId"
+        - "currentWineSampleId"
+        - "tokenId"
+    RESTAPIResponse_String:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "string"
         error:
           $ref: "#/components/schemas/Error"
         metadata:
