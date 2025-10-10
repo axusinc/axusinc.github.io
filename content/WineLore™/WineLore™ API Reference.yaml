@@ -70,6 +70,22 @@ paths:
             '*/*':
               schema:
                 $ref: "#/components/schemas/RESTAPIResponse_WineSampleAssessmentDTO"
+  /filterAndCountCommissionParticipants:
+    post:
+      description: ""
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FilterAndCountCommissionParticipantsRequest"
+        required: true
+      responses:
+        "200":
+          description: "OK"
+          content:
+            '*/*':
+              schema:
+                $ref: "#/components/schemas/RESTAPIResponse_Long"
   /filterCommissionParticipants:
     post:
       description: ""
@@ -454,6 +470,34 @@ components:
           type: "boolean"
         data:
           $ref: "#/components/schemas/WineSampleAssessmentDTO"
+        error:
+          $ref: "#/components/schemas/Error"
+        metadata:
+          type: "string"
+    FilterAndCountCommissionParticipantsRequest:
+      type: "object"
+      properties:
+        commissionId:
+          type: "string"
+          nullable: true
+        auid:
+          type: "integer"
+          format: "int64"
+          nullable: true
+        role:
+          type: "string"
+          nullable: true
+          enum:
+            - "HEAD_OF_EXPERTS"
+            - "EXPERT"
+    RESTAPIResponse_Long:
+      type: "object"
+      properties:
+        success:
+          type: "boolean"
+        data:
+          type: "integer"
+          format: "int64"
         error:
           $ref: "#/components/schemas/Error"
         metadata:

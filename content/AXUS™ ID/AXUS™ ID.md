@@ -20,3 +20,5 @@ Please follow our [[AXUS™ ID Design Guidelines]] when adding [[AXUS™ ID]] to
 #### [[AXUS™ ID Key Terms]]
 #### [[AXUS™ ID REST API]]
 #### [[AXUS™ ID Design Guidelines]]
+## Latest News
+![[AXUS™ ID News]]
